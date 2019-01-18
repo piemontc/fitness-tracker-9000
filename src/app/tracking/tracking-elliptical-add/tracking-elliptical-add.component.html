@@ -1,0 +1,47 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Add Entry - Elliptical</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <form [formGroup]="form" (ngSubmit)="submitForm(); form.reset()">
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Minutes" type="number" formControlName="minutes" required>
+      </mat-form-field>
+    
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Strides" type="number" formControlName="strides" required>
+      </mat-form-field>
+    
+      <div class="date-row">
+        <mat-form-field class="date-entry">
+          <mat-select placeholder="Month" formControlName="month" required>
+            <mat-option *ngFor="let month of months" [value]="month"> {{month}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="date-entry">
+          <mat-select placeholder="Day" formControlName="day" required>
+            <mat-option *ngFor="let day of days" [value]="day"> {{day}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="date-entry">
+          <mat-select placeholder="Year" formControlName="year" required>
+            <mat-option *ngFor="let year of years" [value]="year"> {{year}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6" style="padding-bottom: 5px">
+          <button mat-stroked-button class="btn btn-primary" type="Submit" [disabled]="!form.valid"> Add </button>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 5px">
+          <button mat-stroked-button class="btn btn-danger" routerLink="/tracking/elliptical"> Cancel </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

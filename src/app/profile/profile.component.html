@@ -1,0 +1,68 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Profile</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div *ngIf="user" class="row profile-header">
+  <div>
+    <img *ngIf="user.photoURL" class="profile-image" [src]="user.photoURL" />
+    <img *ngIf="!user.photoURL" class="profile-image" src="assets/flat-icons/user-no-photo.svg" />
+  </div>
+  <div>
+    <p class="profile-name">{{ user.firstName }}</p>
+    <p class="profile-name">{{ user.lastName }}</p>
+  </div>
+</div>
+
+<div *ngIf="user.uid == loggedInUser.uid" class="row">
+  <div class="col-lg-12 header">
+    <h3 style="display: inline">Monthly Goals</h3>
+    <button class="btn btn-light" [routerLink]="['/update-goals']">Update</button>
+  </div>
+  <div class="col-12 header">
+    <mat-form-field>
+      <mat-select [(value)]="currentGoal">
+        <mat-option *ngFor="let goal of goals" [value]="goal.value">
+          {{goal.view}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="goal-record">{{ currentGoal }}</p>
+  </div>
+</div>
+
+<div *ngIf="user" class="row">
+  <div class="col-12">
+    <h3>Personal Records</h3>
+  </div>
+  <div class="col-12 header">
+    <mat-form-field>
+      <mat-select [(value)]="currentRecord">
+        <mat-option *ngFor="let record of records" [value]="record.value">
+          {{record.view}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="goal-record">{{ currentRecord }}</p>
+  </div>
+</div>
+
+<div *ngIf="user && user.friends && user.friends.length > 0" class="row">
+  <div class="col-12">
+    <h3>Following</h3>
+  </div>
+  <div *ngFor="let friend of friends" class="col-12 friends-row">
+    <img class="friend-image" [src]="friend.photo" />
+    {{ friend.name }}
+    <button class="btn btn-light" (click)="visitProfile(friend.uid)">Visit Profile</button>
+  </div>
+</div>
+
+<div *ngIf="user && user.uid != loggedInUser.uid" class="row">
+  <div class="col-12 follow-buttons">
+    <button *ngIf="!areWeFriends(user.uid)" class="btn btn-success" (click)="followUser()">Follow {{user.firstName}}</button>
+    <button *ngIf="areWeFriends(user.uid)" class="btn btn-danger" (click)="unfollowUser()">Unfollow {{user.firstName}}</button>
+  </div>
+</div>

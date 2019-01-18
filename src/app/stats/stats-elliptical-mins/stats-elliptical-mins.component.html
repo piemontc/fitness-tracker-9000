@@ -1,0 +1,63 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Statistics - Elliptical</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 header">
+    <h2>Minutes</h2>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Current Week</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getWeekMins() | number: '1.0-2' }}
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-6">
+    <h3>Month</h3>
+  </div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <mat-select [(value)]="thisMonth">
+        <mat-option *ngFor="let month of months" [value]="month.value">
+          {{month.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getMonthMins(thisMonth) | number: '1.0-2' }}
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-6">
+    <h3>Year</h3>
+  </div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <mat-select [(value)]="thisYear">
+        <mat-option *ngFor="let year of years" [value]="year.value">
+          {{year.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getYearMins(thisYear) | number: '1.0-2' }}
+  </div>
+</div>

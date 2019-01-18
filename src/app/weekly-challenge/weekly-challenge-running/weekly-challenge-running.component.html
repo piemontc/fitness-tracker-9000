@@ -1,0 +1,38 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Weekly Challenge - Running</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <table matSort style="width: 100%">
+      <tr>
+        <th mat-header-cell style="width: 50%"> User </th>
+        <th mat-header-cell style="width: 50%"> Miles </th>
+      </tr>
+
+      <tr *ngFor="let m of milesStats">
+        <td mat-cell style="width: 50%"> {{m.name}} </td>
+        <td mat-cell style="width: 50%"> {{getWeekMiles(m.stats)}} </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <table matSort style="width: 100%">
+      <tr>
+        <th mat-header-cell style="width: 50%"> User </th>
+        <th mat-header-cell style="width: 50%"> Minutes </th>
+      </tr>
+
+      <tr *ngFor="let m of minutesStats">
+        <td mat-cell style="width: 50%"> {{m.name}} </td>
+        <td mat-cell style="width: 50%"> {{getWeekMins(m.stats)}} </td>
+      </tr>
+    </table>
+  </div>
+</div>

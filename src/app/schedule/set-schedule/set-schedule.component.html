@@ -1,0 +1,119 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Set Schedule</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 schedule-buttons">
+    <button mat-stroked-button class="btn btn-primary" routerLink="create"> New </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Monday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of monday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="monday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Tuesday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of tuesday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="tuesday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Wednesday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of wednesday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="wednesday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Thursday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of thursday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="thursday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Friday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of friday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="friday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Saturday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of saturday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="saturday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card>
+      <mat-card-content>
+        <h2>Sunday</h2>
+        <mat-list role="list">
+          <div *ngFor="let item of sunday" class="schedule-item-group">
+            <mat-list-item role="listitem">{{item.activity}} - {{item.duration}} mins</mat-list-item>
+            <button mat-stroked-button class="btn btn-danger remove-button" (click)="delete(item)"> Delete </button>
+          </div>
+          <mat-list-item *ngIf="sunday.length < 1" role="listitem">Rest</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

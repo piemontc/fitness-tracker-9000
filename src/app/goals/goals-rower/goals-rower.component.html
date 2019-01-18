@@ -1,0 +1,36 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Goals - Rower</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h2>Monthly</h2>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Strokes</h3>
+  </div>
+</div>
+<div class ="row">
+  <div class="col-lg-12">
+    <h4>{{ getMonthStrokes() | number: '1.0-2' }} of {{ strokesGoal | number: '1.0-2' }}</h4>
+    <mat-progress-bar mode="determinate" [(value)]="strokesProgress"></mat-progress-bar>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Minutes</h3>
+  </div>
+</div>
+<div class ="row">
+  <div class="col-lg-12">
+    <h4>{{ getMonthMins() | number: '1.0-2' }} of {{ minsGoal | number: '1.0-2' }}</h4>
+    <mat-progress-bar mode="determinate" [(value)]="minsProgress"></mat-progress-bar>
+  </div>
+</div>

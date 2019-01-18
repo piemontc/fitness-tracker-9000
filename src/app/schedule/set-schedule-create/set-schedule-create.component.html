@@ -1,0 +1,41 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Set Schedule</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <div>
+        <h3>Activity </h3>
+        <mat-radio-group class="radio-buttons" formControlName="activity">
+          <mat-radio-button value="Bike">Bike</mat-radio-button>
+          <mat-radio-button value="Elliptical">Elliptical</mat-radio-button>
+          <mat-radio-button value="Rower">Rower</mat-radio-button>
+          <mat-radio-button value="Run">Run</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <h3>Duration</h3>
+      <mat-slider
+        class="example-margin"
+        [max]="80"
+        [min]="0"
+        [step]="5"
+        [thumbLabel]="true"
+        formControlName="duration">
+      </mat-slider>
+
+      <h3>Day</h3>
+      <mat-form-field class="day-entry">
+        <mat-select placeholder="Day" formControlName="day" required>
+          <mat-option *ngFor="let day of days" [value]="day"> {{day}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button style="margin-right: 5px" class="btn btn-primary" type="Submit" [disabled]="!form.valid"> Add </button>
+      <button mat-stroked-button class="btn btn-light"[disabled]="formIsEmpty()" (click)="clear()"> Clear </button>
+    </form>
+  </div>
+</div>

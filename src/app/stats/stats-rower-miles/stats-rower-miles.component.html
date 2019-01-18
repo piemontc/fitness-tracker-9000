@@ -1,0 +1,63 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Statistics - Rower</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 header">
+    <h2>Strokes</h2>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Current Weekly Total</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getWeekStrokes() | number: '1.0-2' }}
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-6">
+    <h3>Monthly Total</h3>
+  </div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <mat-select [(value)]="thisMonth">
+        <mat-option *ngFor="let month of months" [value]="month.value">
+          {{month.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getMonthStrokes(thisMonth) | number: '1.0-2' }}
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-6">
+    <h3>Yearly Total</h3>
+  </div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <mat-select [(value)]="thisYear">
+        <mat-option *ngFor="let year of years" [value]="year.value">
+          {{year.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    {{ getYearStrokes(thisYear) | number: '1.0-2' }}
+  </div>
+</div>

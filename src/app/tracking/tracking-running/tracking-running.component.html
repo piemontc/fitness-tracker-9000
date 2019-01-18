@@ -1,0 +1,33 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Running</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <button mat-stroked-button class="btn btn-primary" routerLink="add"> Add Entry </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <table matSort style="width:100%;">
+      <tr>
+        <th mat-header-cell> Min </th>
+        <th mat-header-cell> Mi </th>
+        <th mat-header-cell> Date </th>
+        <th mat-header-cell> Pace </th>
+        <th mat-header-cell></th>
+      </tr>
+    
+      <tr *ngFor="let r of run | slice: 0:20">
+        <td mat-cell> {{r.minutes}} </td>
+        <td mat-cell> {{r.miles}} </td>
+        <td mat-cell> {{formatDate(r.date)}} </td>
+        <td mat-cell> {{getPace((r.minutes / r.miles))}} </td>
+        <td mat-cell> <button mat-stroked-button class="btn btn-danger" (click)="deleteEntry(r)"> Delete </button></td>
+      </tr>
+    </table>
+  </div>
+</div>

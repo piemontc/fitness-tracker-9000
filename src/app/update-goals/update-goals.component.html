@@ -1,0 +1,53 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Update Goals</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <form [formGroup]="form" (ngSubmit)="updateGoals()">
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Bike Minutes Goal" [(ngModel)]="user.bikeMinGoal" [(value)]="user.bikeMinGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Bike Miles Goal" [(ngModel)]="user.bikeMileGoal" [(value)]="user.bikeMileGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Rower Minutes Goal" [(ngModel)]="user.rowerMinGoal" [(value)]="user.rowerMinGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Rower Strokes Goal" [(ngModel)]="user.rowerStrokeGoal" [(value)]="user.rowerStrokeGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Running Minutes Goal" [(ngModel)]="user.runningMinGoal" [(value)]="user.runningMinGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Running Miles Goal" [(ngModel)]="user.runningMileGoal" [(value)]="user.runningMileGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Elliptical Minutes Goal" [(ngModel)]="user.ellipticalMinGoal" [(value)]="user.ellipticalMinGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    
+      <mat-form-field class="add-entry">
+        <input matInput placeholder="Elliptical Strides Goal" [(ngModel)]="user.ellipticalStrideGoal" [(value)]="user.ellipticalStrideGoal" type="number" required [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <div class="row">
+        <div class="col-sm-6" style="padding-bottom: 5px">
+          <button mat-stroked-button class="btn btn-primary" type="Submit" [disabled]="!checkIfValid()"> Update </button>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 5px">
+          <button mat-stroked-button class="btn btn-danger" (click)="cancel()"> Cancel </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.add-entry {
+  width: 100%;
+  margin: 5px;
+}
+body {
+  height: 100%;
+  width: auto;
+}
+.main-stuff {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.back-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.col-lg-12 {
+  padding: 5px;
+}
+.col-lg-6 {
+  padding: 5px;
+}
+.date-entry {
+  width: 30%;
+}
+.day-entry {
+  width: 100%;
+}
+.date-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.decision-button {
+  height: 75%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.decision-button-svg {
+  height: 8em;
+  width: auto;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.fas {
+  font-size: 3em;
+}
+.friend-image {
+  height: 5em;
+  width: auto;
+  border-radius: 50%;
+}
+.friends-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.follow-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-content {
+  width: 100%;
+  text-align: center;
+  font-size: 0.7em;
+}
+.goal-record {
+  font-size: 1.5em;
+}
+html {
+  height: 100%;
+}
+.mat-card {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.mat-radio-button {
+  margin: 0 5px;
+  margin-bottom: 2%;
+}
+.mat-slider-horizontal {
+  width: 100%;
+  margin-bottom: 2%;
+}
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile-image {
+  height: 11em;
+  width: auto;
+  border-radius: 50%;
+}
+.profile-name {
+  font-size: 2em;
+}
+.radio-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.remove-button {
+  height: 50%;
+}
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.schedule-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.schedule-item-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Drag n Drop */
+.example-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}

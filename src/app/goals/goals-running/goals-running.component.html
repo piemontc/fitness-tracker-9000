@@ -1,0 +1,36 @@
+<div class ="row">
+  <div class="col-lg-12 header">
+    <h1 style="display: inline">Goals - Running</h1>
+    <button mat-stroked-button (click)="goBack()"> Back </button>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h2>Monthly Goals</h2>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Miles</h3>
+  </div>
+</div>
+<div class ="row">
+  <div class="col-lg-12">
+    <h4>{{ getMonthMiles() | number: '1.0-2' }} of {{ milesGoal }}</h4>
+    <mat-progress-bar mode="determinate" [(value)]="milesProgress"></mat-progress-bar>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-lg-12">
+    <h3>Minutes</h3>
+  </div>
+</div>
+<div class ="row">
+  <div class="col-lg-12">
+    <h4>{{ getMonthMins() | number: '1.0-2' }} of {{ minsGoal }}</h4>
+    <mat-progress-bar mode="determinate" [(value)]="minsProgress"></mat-progress-bar>
+  </div>
+</div>
